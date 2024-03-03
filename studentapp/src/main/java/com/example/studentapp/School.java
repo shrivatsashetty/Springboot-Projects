@@ -1,5 +1,5 @@
 package com.example.studentapp;
 
-public class University {
+public class School {
 	
 }
