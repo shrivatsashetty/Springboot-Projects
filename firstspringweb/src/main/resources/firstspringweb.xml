@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
 	<!-- both the bean and the properties tag can be implemented as self closing tags or manual closing -->
@@ -21,7 +20,7 @@
 		<constructor-arg index="0" value="2"> </constructor-arg>
 		<constructor-arg index="1" value="Malgudi Days"/>
 		<constructor-arg name="bookAuthor" value="RK Narayan"/>
-		<!-- it's recommended to use either index or name property -->
+		<!-- it's recommended to use either index or name property to avoid clash -->
 	</bean>
 	
 	<!-- creating configuration for another bean class -->
