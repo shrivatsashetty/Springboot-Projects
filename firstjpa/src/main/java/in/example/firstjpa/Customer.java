@@ -1,6 +1,6 @@
 package in.example.firstjpa;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Customer {
 	private Integer customerId;
 	private String firstName;
 	private int pinCode;
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	/* getter and setter */
 	public void setCustomerId(Integer customerId) {
@@ -42,10 +42,10 @@ public class Customer {
 		this.pinCode = pinCode;
 	}
 	
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	
