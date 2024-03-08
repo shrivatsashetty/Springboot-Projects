@@ -26,9 +26,11 @@
       	
       	<property name="hibernate.hbm2ddl.auto">update</property>
       	
-        <!-- specify the path to the XNL file which holds the data 
+        <!-- specify the path to the XML file which holds the data 
         	 on how the class attributes must be mapped to columns of the table -->
         <mapping resource="employeemapping.hbm.xml"/>
                
     </session-factory>    
 </hibernate-configuration>
+
+

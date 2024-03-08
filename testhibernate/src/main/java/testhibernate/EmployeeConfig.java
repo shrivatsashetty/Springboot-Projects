@@ -20,7 +20,7 @@ public class EmployeeConfig {
 	 * since the configuration file contains a tag called session factory */
 	SessionFactory sessionFactory = configuration.buildSessionFactory();
 	
-	/* a method to set object state and insert it to database as a record */
+	/* a method to set object's state and insert it to database as a record */
 	@SuppressWarnings("deprecation")
 	public void insertRecord(int empId, String empName, int empAge, int empSalary ) {
 		Employee employee = new Employee(); // creating a new object of Employee class
@@ -31,7 +31,7 @@ public class EmployeeConfig {
 		Transaction transaction = session.beginTransaction();
 		
 		// calling the setter methods to set the values or state of the object
-		employee.setempId(empId);
+		employee.setEmpId(empId);
 		employee.setEmpAge(empAge);
 		employee.setEmpName(empName);
 		employee.setEmpSalary(empSalary);

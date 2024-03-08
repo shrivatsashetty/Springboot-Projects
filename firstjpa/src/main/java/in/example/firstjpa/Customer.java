@@ -8,14 +8,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/* this class is gong to be our entity class */ 
+/* this class is  our bean and represents an entity in a relational database or */ 
+
 @Entity
 @Table(name = "customers") // mapping the class to the respective table
 public class Customer {
+	
 	/* attributes */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer customerId;
+	
 	private String firstName;
 	private int pinCode;
 	private LocalDate dateOfBirth;
@@ -28,10 +31,10 @@ public class Customer {
 		return customerId;
 	}
 	
-	public String getFirstNameString() {
+	public String getFirstName() {
 		return firstName;
 	}
-	public void setFirstNameString(String firstNameString) {
+	public void setFirstName(String firstNameString) {
 		this.firstName = firstNameString;
 	}
 	

@@ -8,10 +8,10 @@ public class Employee {
 	private int empSalary;
 	
 	/* getter-setter */
-	public int getempId() {
+	public int getEmpId() {
 		return empId;
 	}
-	public void setempId(int empId) {
+	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 	

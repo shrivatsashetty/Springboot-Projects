@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService {
 	
-	/* the service class has an instance repository class as one of it's attribute 
+	/* the service class has an instance of repository class as one of it's attribute 
 	 * and the required instance of class is auto injected at runtime by @Autowired annotation */
 	@Autowired
 	public CustomerRepository customerRepository;
@@ -21,14 +21,14 @@ public class CustomerService {
 		Customer customer = new Customer();
 		
 		customer.setCustomerId(customerId);
-		customer.setFirstNameString(firstName);
+		customer.setFirstName(firstName);
 		customer.setPinCode(pincode);
 		customer.setDateOfBirth(dateOfBirth);
 		
 		customerRepository.save(customer);
 	}
 	
-	/* a method to display all customer record in table as List */
+	/* a method to return all customer record in table as List */
 	public List<Customer> fetchAllCustomers(){
 		return customerRepository.findAll();
 	}

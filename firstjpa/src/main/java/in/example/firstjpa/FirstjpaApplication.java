@@ -26,8 +26,8 @@ public class FirstjpaApplication {
 		// retrieve all records
 		List<Customer> customerList = customerService.fetchAllCustomers();
 		
-		
-		for(Customer customer: customerList) {
+		// display all customers one by one
+		for(Customer customer : customerList) {
 			System.out.println(customer);
 		}
 		
