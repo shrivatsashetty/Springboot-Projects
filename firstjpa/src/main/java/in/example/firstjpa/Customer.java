@@ -1,0 +1,61 @@
+package in.example.firstjpa;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+/* this class is gong to be our entity class */ 
+@Entity
+@Table(name = "customers") // mapping the class to the respective table
+public class Customer {
+	/* attributes */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer customerId;
+	private String firstName;
+	private int pinCode;
+	private Date dateOfBirth;
+	
+	/* getter and setter */
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
+	}
+	public Integer getCustomerId() {
+		return customerId;
+	}
+	
+	public String getFirstNameString() {
+		return firstName;
+	}
+	public void setFirstNameString(String firstNameString) {
+		this.firstName = firstNameString;
+	}
+	
+	public int getPinCode() {
+		return pinCode;
+	}
+	public void setPinCode(int pinCode) {
+		this.pinCode = pinCode;
+	}
+	
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
+	/* toString() method to print description of the object */
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId +
+				", firstName=" + firstName + 
+				", pinCode=" + pinCode +
+				", dateOfBirth=" + dateOfBirth + "]";
+	}
+	
+}
