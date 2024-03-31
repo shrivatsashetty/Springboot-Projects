@@ -10,7 +10,7 @@
 			  this is called property based dependency injecion -->
 		<property name="bookId" value="1"> </property>
 		<property name="bookTitle" value="Tinkle Digest" />
-		<property name="bookAuthor" value="Time of India Group" />
+		<property name="bookAuthor" value="Times of India Group" />
 		<!-- reference to another bean -->
 		<property name="publisher" ref="_publisher" />
 		

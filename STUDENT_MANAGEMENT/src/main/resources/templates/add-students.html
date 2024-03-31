@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #d6d8db; /* Light green background */
+            font-family: sans-serif;
+        }
+        .heading {
+            background-color: #ffc107; /* Yellow background for heading */
+            color: black;
+            padding: 10px 20px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            float: right; /* Align form to right corner */
+        }
+        .card-body {
+            background-color: #fff; /* White background for form card */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Add Student</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="form-container card">
+                <h1 class="text-center">Create New Student</h1>
+                <div class="card-body">
+                    <form th:action="@{/students}" th:object="${student}" method="POST">
+                        <div class="form-group">
+                            <label>Student First Name</label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                th:field="*{name}"
+                                class="form-control"
+                                placeholder="Enter First name"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Student USN</label>
+                            <input
+                                type="text"
+                                name="usn"
+                                th:field="*{usn}"
+                                class="form-control"
+                                placeholder="Enter usn"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Student Section</label>
+                            <input
+                                type="text"
+                                name="section"
+                                th:field="*{Section}"
+                                class="form-control"
+                                placeholder="Enter Section"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Student Address</label>
+                            <input
+                                type="text"
+                                name="email"
+                                th:field="*{Address}"
+                                class="form-control"
+                                placeholder="Enter Address"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Student Course</label>
+                            <input
+                                type="number"
+                                name="course"
+                                th:field="*{course}"
+                                class="form-control"
+                                placeholder="Enter course"
+                            />
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jY38PBHQiwNzxEh7fxXRxwDhwTlq+z" crossorigin="anonymous"></script>
+</body>
+</html>

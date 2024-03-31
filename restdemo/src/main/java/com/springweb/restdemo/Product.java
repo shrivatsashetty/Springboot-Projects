@@ -14,14 +14,6 @@ public class Product {
 		this.productId = nextProductId++;
 	}
 	
-//	public static Long getNextProductId() {
-//		return nextProductId;
-//	}
-//	
-//	public static void setNextProductId(Long nextProductId) {
-//		Product.nextProductId = nextProductId;
-//	}
-	
 	public Long getProductId() {
 		return productId;
 	}
@@ -42,6 +34,5 @@ public class Product {
 	public void setProductPrice(double productPrice) {
 		this.productPrice = productPrice;
 	}
-	
 	
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom CSS styles here */
+        body {
+            padding-top: 70px; /* Adjust the padding according to the navbar height */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Student Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Course <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Add other navigation links here -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Add Course</h2>
+        <form action="/courses/add" method="post">
+            <div class="form-group">
+                <label for="courseName">Name:</label>
+                <input type="text" class="form-control" id="courseName" name="courseName" required>
+            </div>
+            <div class="form-group">
+                <label for="courseDescription">Description:</label>
+                <input type="text" class="form-control" id="courseDescription" name="courseDescription" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Course</button>
+        </form>
+        
+        <!-- Display table with course details -->
+        <h2 class="mt-5">All Courses</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add dynamic elements here using Thymeleaf -->
+                <tr>
+                    <td>1</td>
+                    <td>Maths</td>
+                    <td>contenst of maths</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CyberSecurity</td>
+                    <td>Course Description 2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>JAVA</td>
+                    <td>Course Description 2</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DSA</td>
+                    <td>Course Description 2</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td> DEVOPS</td>
+                    <td>Course Description 2</td>
+                </tr>
+                <!-- Sample dynamic data -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JavaScript and jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

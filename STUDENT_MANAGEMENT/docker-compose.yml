@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql:latest
+    container_name: mysqldb
+    ports: 
+      - "3308:3306"  # Map container port 3306 to host port 3307
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hibernateDB
+
+  STUDENT_MANAGEMENT:
+    image: std-img:v1
+    build: .
+    ports:
+      - "8082:8080"
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: hello@123
+      MYSQL_PORT: 3306

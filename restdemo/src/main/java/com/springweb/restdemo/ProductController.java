@@ -69,7 +69,7 @@ public class ProductController {
 	}
 
 	/* POST i.e. Create */
-	@PostMapping("/postproduct")
+	@PostMapping
 	public Product postProduct(@RequestBody Product product) { 
 		listOfProducts.add(product);
 		return product;
