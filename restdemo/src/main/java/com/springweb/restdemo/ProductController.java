@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 	
 	// creating an array list to store the product objects returned by the API
-	private List<Product> listOfProducts = new ArrayList<Product>();
+	private List<Product> listOfProducts = new ArrayList<>();
 	
 	/* GET */
 	@GetMapping("/welcome") // http://localhost:8080/products/hello
@@ -88,13 +88,15 @@ public class ProductController {
 
 	/* PATCH i.e. selective update */
 	@PatchMapping("/{id}")
-	public Product editProduct(@PathVariable Long id, @RequestBody Product updateProduct){
+	public Product editProduct(@PathVariable Long id, @RequestBody Product updatedProduct){
+		
 		Product existingProduct = getProductById(id);
-		if(!updateProduct.getProductName().equals(null)){
-			existingProduct.setProductName(updateProduct.getProductName());
+		
+		if(!updatedProduct.getProductName().equals(null)){
+			existingProduct.setProductName(updatedProduct.getProductName());
 		}
-		if(updateProduct.getProductPrice() != 0 ){
-			existingProduct.setProductPrice(updateProduct.getProductPrice());
+		if(updatedProduct.getProductPrice() != 0 ){
+			existingProduct.setProductPrice(updatedProduct.getProductPrice());
 		}
 		return existingProduct;
 	}

@@ -25,16 +25,16 @@ public class MyRestController {
 	final List<Book> books=new ArrayList<>(); 
 	
 	@GetMapping
-	List<Book> getdata() {
+	public List<Book> getdata() {
 		return books;
 	}
 	@GetMapping("{id}")
-	Book getdata(@PathVariable int id) {
+	public Book getdata(@PathVariable int id) {
 		return  getbookbyid(id);
 	}
 	
 	@PostMapping
-	ResponseEntity<?> setdata(@Valid @RequestBody Book newdata, BindingResult result) {
+	public ResponseEntity<?> setdata(@Valid @RequestBody Book newdata, BindingResult result) {
 			if(result.hasErrors()) {
 				List<String> errors = new ArrayList<String>();
 				result.getFieldErrors().forEach(error -> errors.add(error.getField()+":"+error.getDefaultMessage()));
@@ -45,7 +45,7 @@ public class MyRestController {
 		}	}
 	
 	@PutMapping("/{id}")
-	ResponseEntity<?> updatedata(@PathVariable int id, @Valid @RequestBody Book newdata, BindingResult result) {
+	public ResponseEntity<?> updatedata(@PathVariable int id, @Valid @RequestBody Book newdata, BindingResult result) {
 		if(result.hasErrors()) {
 			List<String> errors = new ArrayList<String>();
 			result.getFieldErrors().forEach(error -> errors.add(error.getField()+":"+error.getDefaultMessage()));
@@ -58,7 +58,7 @@ public class MyRestController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(books);
 	}	}
 
-	Book getbookbyid(int id) {
+	public Book getbookbyid(int id) {
 		for(Book b:books) {
 			if(b.getId()==id) {
 				return b;

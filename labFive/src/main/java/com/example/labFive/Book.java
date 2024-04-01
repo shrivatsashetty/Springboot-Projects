@@ -17,29 +17,37 @@ public class Book {
 	String author;
 	@NotEmpty(message = "Description should not be empty")
 	@Email(message = "This is not in email format")
-String descString;
-public String getDescString() {
-	return descString;
-}
-public void setDescString(String descString) {
-	this.descString = descString;
-}
-public Long getId() {
-	return id;
-}
-public void setId(Long id) {
-	this.id = id;
-}
-public int getPrice() {
-	return price;
-}
-public void setPrice(int price) {
-	this.price = price;
-}
-public String getAuthor() {
-	return author;
-}
-public void setAuthor(String author) {
-	this.author = author;
-}
+	String descString;
+
+	public String getDescString() {
+		return descString;
+	}
+
+	public void setDescString(String descString) {
+		this.descString = descString;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 }
