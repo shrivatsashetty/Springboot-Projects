@@ -3,9 +3,11 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.connection.driver_class">
-			com.mysql.cj.jdbc.Driver</property>
+			com.mysql.cj.jdbc.Driver
+		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/student</property>
+			jdbc:mysql://localhost:3306/student 
+		</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">Dumma12@</property>
 		<property name="hibernate.connection.pool_size">10</property>

@@ -20,7 +20,6 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
-
 public class MyRestController {
 	final List<Book> books=new ArrayList<>(); 
 	
