@@ -27,6 +27,7 @@ public class MyRestController {
 	public List<Book> getdata() {
 		return books;
 	}
+	
 	@GetMapping("{id}")
 	public Book getdata(@PathVariable int id) {
 		return  getbookbyid(id);
@@ -41,7 +42,8 @@ public class MyRestController {
 			}
 			else{books.add(newdata);
 			return ResponseEntity.status(HttpStatus.CREATED).body(newdata);
-		}	}
+		}	
+	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> updatedata(@PathVariable int id, @Valid @RequestBody Book newdata, BindingResult result) {
@@ -55,7 +57,8 @@ public class MyRestController {
 			b.setAuthor(newdata.getAuthor());
 			b.setPrice(newdata.getPrice());
 		return ResponseEntity.status(HttpStatus.CREATED).body(books);
-	}	}
+	}	
+}
 
 	public Book getbookbyid(int id) {
 		for(Book b:books) {
