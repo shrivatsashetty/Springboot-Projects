@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<!-- both the bean and the properties tag can be implemented as self closing tags or manual closing -->
+	<bean id="_book" class="com.example.firstspringweb.Book" scope="prototype" init-method="initBook" destroy-method="destructor">
+		<!-- "property" tag is used to instantiate the state of the object using getter methods 
+			  this is called property based dependency injecion -->
+		<property name="bookId" value="1"> </property>
+		<property name="bookTitle" value="Tinkle Digest" />
+		<property name="bookAuthor" value="Times of India Group" />
+		<!-- reference to another bean -->
+		<property name="publisher" ref="_publisher" />
+		
+		<!-- "constructor-arg" tag is used to instantiate the state of the object when it's created using constructor method 
+			  this is called costructor based dependency injection -->
+		<!-- instead of name property we can use index property -->
+		<constructor-arg index="0" value="2"> </constructor-arg>
+		<constructor-arg index="1" value="Malgudi Days"/>
+		<constructor-arg name="bookAuthor" value="RK Narayan"/>
+		<!-- it's recommended to use either index or name property to avoid clash -->
+	</bean>
+	
+	<!-- creating configuration for another bean class -->
+	<bean id="_publisher" class="com.example.firstspringweb.Publisher">
+		<property name="publisherName" value="Penguin Books" />
+		<property name="estdYear" value="1971" />
+	</bean>
+
+</beans>

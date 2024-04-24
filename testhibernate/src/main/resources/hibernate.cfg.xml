@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- this file is a configuration fiile for the bean class -->
+
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+
+    <!-- the jdbc driver class used -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!-- mapping the driver and database running on port 3306 -->
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernateDB</property>
+
+    <property name="hibernate.connection.username">dbuser</property>
+    <property name="hibernate.connection.password">hello@123</property>
+
+    <!-- maximum no of conection possible at a time -->
+    <property name="hibernate.connection.pool_size">10</property>
+
+    <!-- show the sql query which was used underneath -->
+    <property name="show_sql">true</property>
+
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <!-- specify the path to the XML file which holds the data 
+        	 on how the class attributes must be mapped to columns of the table -->
+    <mapping resource="employeemapping.hbm.xml"/>
+
+  </session-factory>
+</hibernate-configuration>
+
+
