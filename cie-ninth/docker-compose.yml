@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql-service:
+    image: mysql:latest
+    container_name: mysql-container-1
+    environment:
+      MYSQL_ROOT_PASSWORD: abc
+      MYSQL_DATABASE: prog9DB
+    networks:
+      - default
+
+  prog9:
+    image: prog9:latest
+    container_name: prog9_container
+    working_dir: /app
+    environment:
+      spring.datasource.url: jdbc:mysql://mysql-service:3306/prog9DB
+      spring.datasource.driverClassName: com.mysql.cj.jdbc.Driver
+      spring.datasource.username: root
+      spring.datasource.password: abc
+      spring.jpa.show-sql: "true"
+      spring.jpa.hibernate.ddl-auto: update
+    ports:
+      - "8080:8080"
+    networks:
+      - default
+    depends_on:
+      - mysql-service
+    command: ["java", "-jar", "main.jar"]
