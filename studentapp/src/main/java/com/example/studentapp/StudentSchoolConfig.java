@@ -22,11 +22,8 @@ public class StudentSchoolConfig {
 	public Student geStudent() {
 		return new Student();
 	}
-		
-	@Bean("_school") // the argument inside is the Id of the bean
-	@Scope("singleton") // makes the scope of the Bean object prototype, each object given out must be stored in an ArrayList
-	public School getSchool() {
-		return new School();
-	}
 	
+	/* once we have an object of Student bean, we can get an object of School from it
+	 * since the object of School will be Auto injected into Student */
+		
 }

@@ -17,10 +17,12 @@ public class StudentappApplication {
 		 * the constructor takes the class instance as an argument unlike the name of XML file in XML application context constructor */
 		AnnotationConfigApplicationContext annotAppCntxt = new AnnotationConfigApplicationContext(StudentSchoolConfig.class);
 //		
-		School cambridgeSchool = annotAppCntxt.getBean(School.class);
+//		School cambridgeSchool = annotAppCntxt.getBean(School.class);
+		Student studentA = annotAppCntxt.getBean(Student.class);
+		School cambridgeSchool = studentA.getSchool();
 		System.out.println(cambridgeSchool);
 		
-		Student studentA = annotAppCntxt.getBean(Student.class);
+		
 		System.out.println(studentA.getStdId()); // 1
 		System.out.println(studentA.getStudentName()+ " Studies in\n" + studentA.getSchool().getSchoolName());
 		System.out.println("Student DOB: " + studentA.getDob());

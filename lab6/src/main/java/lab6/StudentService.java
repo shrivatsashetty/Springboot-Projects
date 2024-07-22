@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-
+@SuppressWarnings("deprecation")
 public class StudentService {
 	// first we start off by creating a configuration object
 	Configuration configuration = new Configuration().configure("hibernate.cfg.xml");

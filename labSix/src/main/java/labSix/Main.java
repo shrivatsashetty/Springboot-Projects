@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
+@SuppressWarnings("deprecation")
 public class Main {
 	public static void main(String s[]) {
 		SpringApplication.run(Main.class, s);

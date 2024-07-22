@@ -1,8 +1,13 @@
 package com.example.studentapp;
 
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /* a dependency for the Student class */
+@Component
+@Scope("singleton") // defining the scope of the bean
 public class School {
 
 	/* @Value annotation sets the default values of the attributes
@@ -41,9 +46,10 @@ public class School {
 		this.address = address;
 	}
 	
-//	@Override
-//	public String toString() {
-//		return "School Name:" + this.schoolName + "Established Year:" + this.estdYear; 
-//	}
+	// to string method
+	@Override
+	public String toString() {
+		return "School Name:" + this.schoolName + "Established Year:" + this.estdYear; 
+	}
 		
 }

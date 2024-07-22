@@ -91,7 +91,7 @@ public class PersonController {
 	
 	/* adding a new person to the list of people */
 	@PostMapping("/postperson")
-	public List addPerson(@Valid @RequestBody Person person, BindingResult bindingResults) {
+	public List<?> addPerson(@Valid @RequestBody Person person, BindingResult bindingResults) {
 		/*an ArrayList to store the description of the errors in String format */
 		List<String> errorDescList = new ArrayList<>();
 		

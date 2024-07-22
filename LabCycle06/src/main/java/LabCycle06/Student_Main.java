@@ -43,8 +43,8 @@ public class Student_Main {
 	
 	public void display() {
 		Query q = session.createQuery("from Student");
-		List l = q.getResultList();
-		Iterator it = l.iterator();
+		List<?> l = q.getResultList();
+		Iterator<?> it = l.iterator();
 		System.out.println("List of Students");
 		while(it.hasNext()) {
 			Student s = (Student)it.next();
@@ -55,11 +55,11 @@ public class Student_Main {
 	public void search(int id) {
 		Query q = session.createQuery("from Student where id = :id");
 		q.setParameter("id", id);
-		List l = q.getResultList();
+		List<?> l = q.getResultList();
 		if(l.isEmpty()) {
 			System.out.println("Not Found");
 		}else {
-			Iterator it = l.iterator();
+			Iterator<?> it = l.iterator();
 			System.out.println("Student Deatils");
 			while(it.hasNext()) {
 				Student s = (Student) it.next();

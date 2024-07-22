@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /* the dependent class */
 public class Student {
@@ -54,6 +55,10 @@ public class Student {
 	@Autowired // auto injects the required School dependency
 	public void setSchool(School school) {
 		this.school = school;
+	}
+	/*getter to get school object*/
+	public School getSchool(School school) {
+		return new School();
 	}
 	
 	public String getStudentName() {
